@@ -1,0 +1,19 @@
+{
+  "name": "@repo/tsup-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {},
+  "exports": {
+    ".": "./src/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "tsup": "^8.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

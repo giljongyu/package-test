@@ -1,4 +1,5 @@
 {
+  "name": "@payhere/modules",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -8,17 +9,20 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=@acme/docs^... && changeset publish"
+    "release": "turbo run build --filter=@acme/docs^... && changeset publish",
+    "gen": "cross-env TSX_TSCONFIG_PATH=./packages/plop/tsconfig.json NODE_OPTIONS='--import tsx' plop --plopfile=plopfile.ts"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "turbo": "^2.5.0"
+    "@changesets/cli": "^2.29.0",
+    "cross-env": "^7.0.3",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
+    "turbo": "^2.5.0",
+    "@repo/plop": "workspace:*",
+    "plop": "catalog:"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@10.8.1",
   "engines": {
-    "node": ">=18"
-  },
-  "name": "with-changesets"
+    "node": ">=22"
+  }
 }
